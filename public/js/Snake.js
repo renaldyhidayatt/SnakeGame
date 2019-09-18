@@ -39,6 +39,10 @@ export default class Snake{
         }
     }
     move(){
+        for (let index = this.body.length - 1;index>0;index--){
+            this.body[index].x = this.body[index-1].x;
+            this.body[index].y = this.body[index-1].y;
+        }
         this.body[0].x += this.direction.x *16;
         this.body[0].y += this.direction.y *16;
     }
